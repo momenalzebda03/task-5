@@ -15,13 +15,25 @@ body {
   background-color: $color_navbar_header_button;
 }
 
+.icon_top {
+  top: 2px;
+}
+
 // start evrevthing
+.h1_size {
+  font-size: 70px;
+}
+
+.font_text {
+  font-family: 'Kanit', sans-serif;
+}
+
+.p_color {
+  color: #707070;
+}
 
 // start evrevthing
 // start navbar one
-body section nav .container .font_text {
-  font-family: 'Kanit', sans-serif;
-}
 
 .hover_navbar:hover,
 body section nav .container .hover_navbar:hover .icon {
@@ -116,7 +128,7 @@ body section nav .collapse ul li a .btn:hover {
 
 // end navbar tow
 // start header
-.div_backgound {
+body section .row .div_backgound {
   background: -webkit-linear-gradient(-180deg, $color_navbar_header_button, $colo_header2);
   background: linear-gradient(-180deg, $color_navbar_header_button, $colo_header2);
 
@@ -126,31 +138,26 @@ body section nav .collapse ul li a .btn:hover {
   }
 }
 
-.h1_size {
-  font-size: 60px;
-}
-
-.a_button {
+body section .row div .container div .a_button {
   background-color: transparent;
   transition: 0.3s;
 }
 
-.a_button:hover {
+body section .row div .container div .a_button:hover {
   background-color: green;
 }
 
-.div_image {
+body section .row div div div div .div_image {
   background-size: cover;
   background-position: center center;
   background-image: url("../../images/header/Group\ 1.png");
-  height: 700px;
+  height: 800px;
 }
 
-.arraow_icon {
+body section .row div .container div .arraow_icon {
   animation-name: arrawo;
   animation-duration: 1s;
   animation-iteration-count: infinite;
-  position: relative;
 }
 
 @keyframes arrawo {
@@ -167,25 +174,153 @@ body section nav .collapse ul li a .btn:hover {
   }
 }
 
-.button_width {
+body section .row div div div .button_width {
   width: 7px !important;
 }
 
-.carousel-indicators .active {
+body section .row div div .carousel-indicators .active {
   width: 20px !important;
   border-radius: 0px !important;
   background-color: $color_navbar_header_button;
 }
 
 // end header
+// start blue
+body section .container .row div .h1_color {
+  background-image: linear-gradient(to left, $color_navbar_header_button, $color_navbar_header_button, $color_navbar_header_button, $color_navbar_header_button, $color_navbar_header_button, #3C108A, #3C108A);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+body section .container .row div .h1_color::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  margin-top: 100px;
+  background-color: $color_navbar_header_button;
+}
+
+// end blue
+// start what
+.container .box {
+  position: relative;
+  height: 400px;
+  background: #000;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  margin-right: 15px;
+  margin-top: 45px;
+}
+
+.container:hover .box {
+  transform: rotateY(25deg);
+}
+
+.container .box:hover~.box {
+  transform: rotateY(-25deg);
+}
+
+.container .box:hover {
+  transform: rotateY(0deg) scale(1.25);
+  z-index: 1;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+}
+
+.container .box .imgBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container .box .imgBx:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #f00, #000);
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s;
+  mix-blend-mode: multiply;
+}
+
+.container .box:hover .imgBx:before {
+  opacity: 1;
+}
+
+.container .box .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container .box .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  padding: 20px;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+
+.container .box .content h3 {
+  color: #fff;
+  transition: 0.5s;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-size: 20px;
+  transform: translateY(200px);
+  transition-delay: 0.3s;
+}
+
+.container .box:hover .content h3 {
+  transform: translateY(0px);
+}
+
+.container .box .content p {
+  color: #fff;
+  transition: 0.5s;
+  font-size: 14px;
+  transform: translateY(200px);
+  transition-delay: 0.4s;
+}
+
+.container .box:hover .content p {
+  transform: translateY(0px);
+}
+
+// end what
 // start media
 @media (max-width: 991px) and (min-width: 0px) {
-  .border_end {
+  body section .navbar .container a .border_end {
     border-right: 0px solid #ccc;
   }
 
-  .div_image {
+  body section .row div div div div .div_image {
     height: 710px;
+  }
+
+  .h1_size {
+    font-size: 27px;
+  }
+
+  body section .container .row div .h1_color::before {
+    display: none;
   }
 }
 
