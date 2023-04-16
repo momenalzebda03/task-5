@@ -1,0 +1,15 @@
+@mixin my_icon () {
+    top: 2px;
+}
+
+@mixin font_size () {
+    font-size: 70px;
+}
+
+@mixin font_text () {
+    font-family: 'Kanit', sans-serif;
+}
+
+@mixin p_color () {
+    color: #707070;
+}

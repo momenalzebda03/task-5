@@ -1,35 +1,38 @@
-// start variants
 @use "../../folder_color/color" as *;
+@use "../../mixin/mixin" as *;
 
 .border_end {
-  border-right: 2px solid #ccc;
+  border-right: 2px solid $color_ccc;
 }
 
-// end variants
 body {
   text-transform: capitalize;
 }
 
-.btn,
-.btn:hover {
-  background-color: $color_navbar_header_button;
-}
-
 .icon_top {
-  top: 2px;
+  @include my_icon;
 }
 
 // start evrevthing
 .h1_size {
-  font-size: 70px;
+  @include font_size;
 }
 
 .font_text {
-  font-family: 'Kanit', sans-serif;
+  @include font_text;
 }
 
 .p_color {
-  color: #707070;
+  @include p_color;
+}
+
+.color_icon {
+  cursor: pointer;
+  color: $color_ccc;
+}
+
+.color_icon:hover {
+  color: white;
 }
 
 // start evrevthing
@@ -225,11 +228,6 @@ body section .container .row div .box:hover {
   box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
 }
 
-body section .container .row div .box .imgBx img {
-  width: 100%;
-  height: 45vh;
-}
-
 body section .container .row div .box .imgBx:before {
   content: '';
   position: absolute;
@@ -294,11 +292,37 @@ body section .container .row div .div_flex {
   margin-left: 140px;
 }
 
+body section .container .row div .box .imgBx .image_he {
+  height: 400px;
+}
+
 // end our
+// start you
+body .section_background {
+  background-color: $color_ourwork;
+}
+
+body .section_background .container .row div div div .image_logo {
+  height: 50px;
+}
+
+body .section_background .container .row div div div div .container .row div .image_Characters {
+  width: 50px;
+}
+
+body .section_background .container .row div div div div .container .row .div_width {
+  width: 0%;
+}
+
+body .section_background .container .row div .container .row div .image_res {
+  width: 80%;
+}
+
+// end you
 // start media
 @media (max-width: 991px) and (min-width: 0px) {
   body section .navbar .container a .border_end {
-    border-right: 0px solid #ccc;
+    border-right: 0px solid $color_ccc;
   }
 
   body section .row div div div div .div_image {
@@ -315,6 +339,12 @@ body section .container .row div .div_flex {
 
   body section .container .row div .box:hover {
     transform: rotateY(0deg) scale(1);
+  }
+}
+
+@media (max-width: 325px) and (min-width: 0px) {
+  body .section_background .container .row div .container .row div .image_res {
+    width: 100%;
   }
 }
 
