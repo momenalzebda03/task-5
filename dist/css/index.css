@@ -293,6 +293,34 @@ body .section_background .container .row div .container .row div .image_res {
   width: 80%;
 }
 
+body section .container .row div .card div div .h_color {
+  color: #0856A2;
+}
+
+body section .container .row div .card article figure {
+  overflow: hidden;
+}
+
+body section .container .row div .card:hover article {
+  --hover: 1;
+}
+
+body section .container .row div .card article .my_image {
+  width: 105%;
+  transform: translateX(calc(var(--hover) * -15%)) scale(calc(1 + var(--hover) * 0.2));
+  transition: transform 0.2s;
+}
+
+body section .container .row div .card div div div .div_hr {
+  width: 1px;
+  height: 60px;
+  background-color: #ccc;
+}
+
+body section .container .row div .card div .text_color {
+  color: #aaa;
+}
+
 @media (max-width: 991px) and (min-width: 0px) {
   body section .navbar .container a .border_end {
     border-right: 0px solid #ccc;
@@ -308,6 +336,11 @@ body .section_background .container .row div .container .row div .image_res {
   }
   body section .container .row div .box:hover {
     transform: rotateY(0deg) scale(1);
+  }
+  .div_hr {
+    width: 0px;
+    height: 0px;
+    background-color: #ccc;
   }
 }
 @media (max-width: 325px) and (min-width: 0px) {
