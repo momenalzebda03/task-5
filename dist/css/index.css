@@ -31,6 +31,14 @@ body {
   color: white;
 }
 
+.text_color {
+  color: #aaa;
+}
+
+.h_color {
+  color: #0856A2;
+}
+
 .hover_navbar:hover,
 body section nav .container .hover_navbar:hover .icon {
   font-weight: bold;
@@ -293,10 +301,6 @@ body .section_background .container .row div .container .row div .image_res {
   width: 80%;
 }
 
-body section .container .row div .card div div .h_color {
-  color: #0856A2;
-}
-
 body section .container .row div .card article figure {
   overflow: hidden;
 }
@@ -317,8 +321,36 @@ body section .container .row div .card div div div .div_hr {
   background-color: #ccc;
 }
 
-body section .container .row div .card div .text_color {
-  color: #aaa;
+label {
+  top: 0px;
+  left: 0%;
+  transition: all 0.3s ease-in-out;
+}
+
+body section .container .row div form .row div input,
+body section .container .row div div select,
+body section .container .row div form div textarea {
+  border: 0;
+  border-bottom: 1px solid #555;
+}
+
+body section .container .row div form div textarea {
+  resize: none;
+}
+
+body section .container .row div div input:focus,
+body section .container .row div form div textarea:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #555;
+}
+
+body section .container .row div div input:focus ~ label,
+body section .container .row div div input:valid ~ label,
+body section .container .row div form div textarea:focus ~ label,
+body section .container .row div form div textarea:valid ~ label {
+  top: -12px;
+  font-size: 12px;
 }
 
 @media (max-width: 991px) and (min-width: 0px) {
